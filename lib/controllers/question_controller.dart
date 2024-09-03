@@ -34,4 +34,13 @@ class QuestionController {
 
     return count;
   }
+
+  int question3(int ind) {
+    int sum = 0, K = 1;
+    while (K < ind) {
+      K = K + 1;
+      sum = sum + K;
+    }
+    return sum;
+  }
 }

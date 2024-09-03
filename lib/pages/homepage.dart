@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:target/pages/question_1.dart';
 import 'package:target/pages/question_2.dart';
+import 'package:target/pages/question_3.dart';
 import 'package:target/widgets/utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _pages = [
     Question1(),
     Question2(),
-    Question2(),
+    Question3(),
     Question2(),
     Question2(),
   ];
