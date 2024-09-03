@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:target/controllers/question_controller.dart';
 import 'package:target/widgets/utils.dart';
 
-class Question1 extends StatefulWidget {
-  const Question1({super.key});
+class Question2 extends StatefulWidget {
+  const Question2({super.key});
 
   @override
-  State<Question1> createState() => _Question1State();
+  State<Question2> createState() => _Question2State();
 }
 
-class _Question1State extends State<Question1> {
+class _Question2State extends State<Question2> {
   QuestionController controller = QuestionController();
   TextEditingController _textController = TextEditingController();
 
@@ -35,24 +35,24 @@ class _Question1State extends State<Question1> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Questão 1',
+                'Questão 2',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
               Text(
-                Utils.questions[0],
+                Utils.questions[1],
                 textAlign: TextAlign.justify,
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(
                 height: 25,
               ),
-              Utils.textFieldWidget(_textController, TextInputType.number),
+              Utils.textFieldWidget(_textController, TextInputType.name),
               SizedBox(
                 height: 25,
               ),
               Center(
                 child: TextButton(
-                  onPressed: _isFibonacci,
+                  onPressed: _countA,
                   child: Text(
                     'Verificar',
                     style: TextStyle(
@@ -74,19 +74,20 @@ class _Question1State extends State<Question1> {
     );
   }
 
-  void _isFibonacci() {
+  void _countA() {
     if (_textController.text.isNotEmpty) {
-      if (controller.question1(int.parse(_textController.text))) {
+      int result = controller.question2(_textController.text);
+      if (result != 0) {
         Utils.notificationSnackMessage(
           context: context,
-          mensage: "Pertence a sequência de Fibonacci.",
+          mensage: "A letra 'a' parece $result vezes.",
           backgroundColor: Colors.green,
           icon: Icons.check,
         );
       } else {
         Utils.notificationSnackMessage(
           context: context,
-          mensage: "Não pertence a sequência de Fibonacci.",
+          mensage: "Não aparece nenhuma letra 'a'",
           backgroundColor: Colors.red,
           icon: Icons.close,
         );
@@ -94,7 +95,7 @@ class _Question1State extends State<Question1> {
     } else {
       Utils.notificationSnackMessage(
         context: context,
-        mensage: "O numero não pode ser nulo!",
+        mensage: "Preencha o campo!",
         backgroundColor: Colors.amber.shade700,
         icon: Icons.warning_amber,
       );

@@ -52,10 +52,10 @@ class Utils {
     ScaffoldMessenger.of(context!).showSnackBar(snackBar);
   }
 
-  static Widget textFieldWidget(TextEditingController controller) {
+  static Widget textFieldWidget(TextEditingController controller, TextInputType inputType) {
     return TextField(
       controller: controller,
-      keyboardType: TextInputType.number,
+      keyboardType: inputType,
       decoration: InputDecoration(
         label: Text('Digite um numero'),
         border: OutlineInputBorder(

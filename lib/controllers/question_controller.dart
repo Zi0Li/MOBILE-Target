@@ -1,6 +1,5 @@
 class QuestionController {
-
-  QuestionController(); 
+  QuestionController();
 
   bool question1(int num) {
     int a = 0;
@@ -22,5 +21,17 @@ class QuestionController {
     }
 
     return false;
+  }
+
+  int question2(String str) {
+    int count = 0;
+
+    for (int i = 0; i < str.length; i++) {
+      if (str[i].toLowerCase() == 'a') {
+        count++;
+      }
+    }
+
+    return count;
   }
 }

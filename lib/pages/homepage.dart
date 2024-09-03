@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:target/pages/question_1.dart';
+import 'package:target/pages/question_2.dart';
 import 'package:target/widgets/utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,11 +14,10 @@ class _HomePageState extends State<HomePage> {
   List<int> qtdQuestions = [1, 2, 3, 4, 5];
   List<Widget> _pages = [
     Question1(),
-    Question1(),
-    Question1(),
-    Question1(),
-    Question1(),
-    Question1(),
+    Question2(),
+    Question2(),
+    Question2(),
+    Question2(),
   ];
 
   @override
@@ -56,7 +56,8 @@ class _HomePageState extends State<HomePage> {
                   spacing: 10,
                   runSpacing: 10,
                   children: [
-                    for (int i in qtdQuestions) _button(i, _pages[i]),
+                    for (int i = 0; i < qtdQuestions.length; i++)
+                      _button(i + 1, _pages[i]),
                   ],
                 ),
               )
